@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+	<head>
+		<title>jquery 列表选择</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/list-style.css">
+		<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+		<script src="http://www.jq22.com/jquery/jquery-ui-1.11.0.js"></script>
+		<script src="js/list-script.js"></script>
+		<script>
+			$(function(){
+				// 是否开启选项可拖动，选项可双击
+				$('#selectTitle').initList({
+					openDrag: true,
+					openDblClick: true
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h2 style="text-align:center;">列表选择</h2>
+		<div id="selectTitle" class="list-select">
+			<!-- <div class="list-title">
+				<h4>挑选你的最爱（选项可拖动、双击、单击进行选择）</h4>
+			</div> -->
+			<div class="list-body">
+				<ul class="item-box right-box" id="right-box">
+					<!-- 右边框存放已选项 -->
+				</ul>
+      </div>
+      <!-- 选择你最喜欢的城市 -->
+      <div class="list-title">
+				<h4>选择你最喜欢的城市（选项可拖动、双击、单击进行选择）</h4>
+			</div>
+      <div class="list-body">
+        <ul class="item-box left-box" id="Fruits">
+          <!-- 左边框初始化待选项 -->
+          <li class="item Fruits" data-id="xigua">西瓜</li>
+          <li class="item Fruits" data-id="pingguo">苹果</li>
+          <li class="item Fruits" data-id="xiangjiao">香蕉</li>
+          <li class="item Fruits" data-id="boluo">菠萝</li>
+          <li class="item Fruits" data-id="caomei">草莓</li>
+        </ul>
+        <ul class="item-box left-box" id="Musical">
+          <!-- 左边框初始化待选项 -->
+          <li class="item Musical" data-id="xigua">吉他</li>
+          <li class="item Musical" data-id="pingguo">钢琴</li>
+          <li class="item Musical" data-id="xiangjiao">架子鼓</li>
+          <li class="item Musical" data-id="boluo">口琴</li>
+          <li class="item Musical" data-id="caomei">竖琴</li>
+        </ul>
+				<ul class="item-box left-box" id="region">
+					<!-- 左边框初始化待选项 -->
+					<li class="item region" data-id="xigua">北京</li>
+					<li class="item region" data-id="pingguo">上海</li>
+					<li class="item region" data-id="xiangjiao">深圳</li>
+					<li class="item region" data-id="boluo">广州</li>
+					<li class="item region" data-id="caomei">纽约</li>
+					<li class="item region" data-id="yali">华盛顿</li>
+				</ul>
+			</div>
+			<div class="list-footer">
+				<button class="selected-val" title="获取选择值，输出到控制台">GET</button>
+			</div>
+		</div>
+	</body>
+</html>
