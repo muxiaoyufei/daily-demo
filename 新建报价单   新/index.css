@@ -1,0 +1,390 @@
+
+@charset "UTF-8";
+
+/*CSS样式初始化*/
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,dl,li,dt,dd {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: "微软雅黑", "宋体";
+    color: #666;
+    list-style: none;
+    box-sizing: border-box;
+    font-size: 0.28rem;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+a:hover，a:focus {
+    text-decoration: underline;
+}
+
+i,s {
+    /*font-style: normal;*/
+    /*text-decoration: none;*/
+}
+
+input,img {
+    border: 0 none;
+    /*去掉轮廓线*/
+    outline-style: none;
+    margin: 0;
+    padding: 0;
+    vertical-align: bottom;
+    box-sizing: border-box;
+}
+button {
+  outline: none;
+}
+.clearfix:after {
+    content: "";
+    height: 0;
+    line-height: 0;
+    display: block;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix {
+     zoom: 1;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #d8dde6;
+    font-size: 0.24rem;
+    padding-left: 0.35rem
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+    color: #d8dde6;
+    font-size: 0.24rem;
+    padding-left: 0.35rem
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: #d8dde6;
+    font-size: 0.24rem;
+    padding-left: 0.35rem
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: #d8dde6;
+    font-size: 0.24rem;
+    padding-left: 0.35rem
+}
+
+/*
+  16px=1rem;
+*/
+* {
+  font-size: .875rem;
+}
+input,textarea,select {
+  -webkit-appearance: none;
+  outline: none;
+}
+.newEventDate {
+  padding-left: 5px !important;
+  width: 100%;
+  -webkit-appearance: none;
+}
+.newEventDate::-webkit-calendar-picker-indicator {
+  display: none;
+  /* opacity: 0; */
+}
+.newEventDate::-webkit-clear-button {
+  display: none;
+  /* opacity: 0 */
+}
+.newEventDate::-webkit-datetime-edit {
+  display: none;
+  /* opacity: 0 */
+}
+input[type="text"]::-webkit-input-placeholder {
+  font-size: .75rem;
+}
+
+input[type="text"]:-moz-placeholder {
+  font-size: .75rem;
+}
+
+input[type="text"]::-moz-placeholder {
+  font-size: .75rem;
+}
+
+input[type="text"]:-ms-input-placeholder {
+  font-size: .75rem;
+}
+input:focus,select:focus{
+  border-radius:.25rem;
+  outline: none; 
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.newQuote {
+  min-width: 20rem;
+  max-width: 46.875rem;
+  /* background: #ccc; */
+  height: 37.5rem;
+  margin: 0 auto;
+  font-size: .875rem;
+}
+/* 顶部功能栏 */
+.QuoteDetail .newEventTop {
+  width: 100%;
+  height: 3.0625rem;
+  border-bottom: 1px solid #d8dde6;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  -moz-box-sizing:border-box; /* Firefox */
+  -webkit-box-sizing:border-box; /* Safari */
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  background: #202329;
+  min-width: 20rem;
+  max-width: 46.875rem;
+  z-index: 33;
+}
+/* 取消 */
+.QuoteDetail .weChatcancel {
+  width: 3.875rem;
+  height: 2rem;
+  color: #fff;
+  flex-shrink: 0;
+  line-height: 30px;
+  text-align: center;
+}
+/* 保存 */
+.newQuote .weChatSave {
+  width: 3.875rem;
+  height: 2rem;
+  color: #fff;
+  line-height: 30px;
+  text-align: center;
+}
+.QuoteDetail .weChatTitle {
+  line-height: 31px;
+  font-size: 1.125rem;
+  /* color: #243E65; */
+  color: #fff;
+  text-align: center;
+}
+.newQuote .newEventConTitle {
+  background: #f4f6f9;
+  font-size: .75rem;
+  color: #18345d;
+  padding: .625rem 1rem;
+}
+/* 内容 */
+.newQuote .newEventCon {
+  padding-top: 3rem;
+}
+/* 新建 */
+.newQuote .newEventConUl {
+  padding: 0 1rem;
+  padding-bottom: 1.875rem;
+}
+.newQuote .addCostItem{
+  padding-bottom: .75rem;
+}
+
+.newQuote .newEventConLi {
+  padding-top: 1rem;
+  position: relative;
+}
+
+
+.newQuote .newEventConLi label {
+  font-size: .75rem;
+  color: #54698D;
+  padding-bottom: .25rem;
+  display: block;
+}
+.newQuote .newEventConLi>label>span {
+  color: #911903;
+}
+.newQuote .newEventConLi input {
+  height: 2.5rem;
+  width: 100%;
+  border: 1px solid #d8dde6;
+  border-radius: .25rem;
+  padding-left: .625rem; 
+  background: #fff;
+  padding-left: .625rem;
+}
+.newQuote .addItem{
+  display: flex;
+  flex: 2;
+}
+.newQuote .addNewItem{
+  padding-top:0.25rem; 
+  flex: 1;
+}
+.newQuote .addItem .addBtn{
+  width: 60px;
+  height: 40px;
+  margin-left: 10px;
+  margin-top:0.25rem; 
+  border: 1px solid #d8dde6;
+  border-radius: .25rem;
+  background: none;
+}
+
+/* 放大镜 */
+.newQuote .JumpNagnifier {
+  position: absolute;
+  right: .625rem;
+  top: 3rem;
+  background: url(./images/fenpeirensousuo.png) no-repeat;
+  background-size: contain;
+  width: 1rem;
+  height: 1.125rem;
+}
+/* 日期下拉 */
+.newQuote .SelectDateIcon {
+  position: absolute;
+  right: .625rem;
+  top: 3.5rem;
+  background: url(./images/xialatime.png) no-repeat;
+  background-size: contain;
+  width: 1rem;
+  height: 1.125rem;
+}
+/* 新增费用项字体图标 */
+.newQuote .addNewIcon{
+  top:1.5rem;
+}
+.newQuote .eventTextarea {
+  width: 100%;
+  height: 80px;
+  margin-top: 2px;
+  border-radius: 4px;
+  border: 1px solid #d8dde6;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.newQuote .eventType {
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid #d8dde6;
+  padding-left: 10px;
+  box-sizing: border-box;
+  background: #fff;
+}
+/* 搜索 */
+ .EventAssignor {
+  position: fixed;
+  width: 100%;
+  min-width: 20rem;
+  max-width: 46.875rem;
+}
+ #owerEvent {
+  width: 100%;
+  min-width: 20rem;
+  max-width: 46.875rem;
+  margin: 0 auto;
+}
+/* 搜索*/
+ .EventSearchColleague {
+  background: #f3f6f9;
+  padding: .625rem;
+  box-sizing: border-box;
+  padding-top: 4.65rem;
+}
+ .EventSearchColleagueInp {
+  width: 100%;
+  height: 2.5rem;
+  border-radius: .5rem;
+  border:1px solid #d8dde6;
+  padding-left: .75rem;
+}
+/* 搜索列表*/
+ .EventColleagueList {
+  padding-top: 11.5rem;
+}
+ .EventColleagueDiv {
+  padding: .875rem;
+  background: #f3f6f9;
+  border-bottom: 1px solid #d8dde6;
+  border-top: 1px solid #d8dde6;
+  display: flex;
+}
+ .EventColleagueIcon {
+  background: url(./images/chanpin.png) no-repeat;
+  background-size: contain;
+  width: 1.875rem;
+  height: 1.875rem;
+  display: block;
+}
+ .EventColleagueFont{
+  font-size: 1rem;
+  color: #16325c;
+  margin-left: .6875rem;
+  margin-top: .25rem;
+}
+.QuoteDetail .EventColleagueLi {
+  padding: 1.5rem .875rem;
+  border-bottom: 1px solid #d8dde6;
+  font-size: .875rem;
+  color: #16325c;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+ .EventRelevantLi {
+  padding: 1.5rem .875rem;
+  border-bottom: 1px solid #d8dde6;
+  font-size: .875rem;
+  color: #16325c;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+ .EventInfo {
+  min-width: 20rem;
+  max-width: 46.875rem;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #f3f6f9;
+}
+ #RelevantEventInput {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+  overflow: hidden;
+  padding-right: 2rem;
+}
+ #EventTabS {
+  width: 100%;
+  position: relative;
+  left: 0;
+  z-index: 1;
+  padding-top: 10.125rem;
+  box-sizing: border-box;
+  padding-bottom: 4rem;
+}
+ .EventTabSChildren  {
+  width: 100%;
+  float: left;
+  height: 100%;
+  background: #fff;
+  overflow: auto;
+  /* height: 600px; */
+}
+
+

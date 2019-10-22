@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./jquery-3.2.1.min.js"></script>
+    <title></title><!-- 管理订购 -->
+  </head>
+  
+  <script type="text/javascript">
+    var n=0;
+    var m=2
+    $(function(){
+      /*** 初始化信息 */
+      addProduct(n)
+
+      /*** 模态框单选按钮选择 */
+      $("#optionsRadios1").click(function(){
+        $(this).attr("checked","checked");
+        $("#optionsRadios2").attr("checked",false);
+      })
+      $("#optionsRadios2").click(function(){
+        $(this).attr("checked","checked");
+        $("#optionsRadios1").attr("checked",false)
+      })
+
+      /**追加产品信息模态框*/
+      $(document).on("click",".add",function(){
+        // $(".tdNum").attr("contenteditable",true)
+        // isdb=true; 
+        // $("table tr .tdNum").attr("contenteditable", false);
+        $(".mask").show()
+        $(".modalDetail").show()
+      })
+
+      /**模态框隐藏 */
+      $(document).on("click",".mask",function(){
+        $(".mask").hide()
+        $(".modalDetail").hide()
+      })
+      $(document).on("click",".close",function(){
+        $(".mask").hide()
+        $(".modalDetail").hide()
+      })
+      /**保存添加产品信息*/
+      $(document).on("click",".save",function(){
+        console.log("1234444")
+        
+        addProduct(m)
+        console.log("n的值》》》》》》",n)
+        m=m+2
+        $(".mask").hide()
+        $(".modalDetail").hide()
+      })
+
+    })
+    
+
+    function addProduct(num){
+      var addProduct = ''
+      addProduct=`<div>
+        <div class="detail">
+          <h3>发布产品信息</h3>
+          <table class="detailTable">
+            <thead>
+              <tr>
+                <th>产品名称</th>
+                <th>内部型号</th>
+                <th>物料编码</th>
+                <th>属性</th>
+                <th>是否为安全产品</th>
+              </tr>  
+            </thead>
+            <tbody class="detailTbody">
+              <tr>
+                <td>名称</td>
+                <td>型号</td>
+                <td>编码</td>
+                <td>
+                  <select disabled>
+                    <option value="e">eeeeee</option>
+                    <option value="f">ffff</option>
+                    <option value="g">gggggg</option>
+                    <option value="h">hhhhhh</option>
+                  </select>
+                </td>
+                <td class="radiogroup">
+                  <div class="detailRadio">
+                    <input type="radio" disabled name="Radios${num}" id="Radios${num}" value="select${num}" checked="checked" />
+                    <span>是</span>
+                  </div>
+                  <div class="detailRadio"> 
+                    <input type="radio" disabled name="Radios${num+1}" id="Radios${num+1}" value="select${num+1}" />
+                    <span>否</span>
+                  </div>
+                </td>
+              </tr> 
+            </tbody>
+          </table> 
+        </div>
+        <div class="configure">
+          <h3>配置项发布清单</h3>
+          <table class="configure">
+            <thead>
+              <tr>
+                <th>序号</th>
+                <th>路径</th>
+                <th>文件路径</th>
+                <th>链接</th>
+                <th>文件OR记录编号</th>
+                <th>文件类型</th>
+                <th>版本</th>
+                <th>变更集</th>
+                <th>页数</th>
+                <th>拟制人</th>
+                <th>拟制日期</th>
+                <th>审核人</th>
+                <th>审核日期</th>
+                <th>批准人</th>
+                <th>批准日期</th>
+                <th>发放人</th>
+                <th>已归档</th>
+                <th>备注</th>
+              </tr>  
+            </thead>
+            <tbody class="configureTbody">
+              <tr>
+                <td>1</td>
+                <td>2</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr> 
+            </tbody>
+          </table> 
+        </div>
+      </div>`;
+      $(".productBox").append(addProduct);
+    }
+  </script>
+  
+  <body>
+    <div class="main">
+      <div class="productBox">
+        
+      </div>
+      <span class="add">追加产品信息</span>
+    </div>
+    <div class="mask">
+    </div> 
+    <div class="modalDetail">
+        <div class="close">X</div>
+        <div>
+          <div class="detail">
+            <h3>发布产品信息</h3>
+            <table class="detailTable">
+              <thead>
+                <tr>
+                  <th>产品名称</th>
+                  <th>内部型号</th>
+                  <th>物料编码</th>
+                  <th>属性</th>
+                  <th>是否为安全产品</th>
+                </tr>  
+              </thead>
+              <tbody class="detailTbody">
+                <tr>
+                  <td contenteditable=true>名称</td>
+                  <td contenteditable=true>型号</td>
+                  <td contenteditable=true>编码</td>
+                  <td>
+                    <select>
+                      <option value="e">eeeeee</option>
+                      <option value="f">ffff</option>
+                      <option value="g">gggggg</option>
+                      <option value="h">hhhhhh</option>
+                    </select>
+                  </td>
+                  <td class="radiogroup">
+                    <div class="detailRadio">
+                      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="checked" />
+                      <span>是</span>
+                    </div>
+                    <div class="detailRadio"> 
+                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" />
+                      <span>否</span>
+                    </div>
+                  </td>
+                </tr> 
+              </tbody>
+            </table> 
+          </div>
+          <div class="configure">
+            <h3>配置项发布清单</h3>
+            <table class="configure">
+              <thead>
+                <tr>
+                  <th>序号</th>
+                  <th>路径</th>
+                  <th>文件路径</th>
+                  <th>链接</th>
+                  <th>文件OR记录编号</th>
+                  <th>文件类型</th>
+                  <th>版本</th>
+                  <th>变更集</th>
+                  <th>页数</th>
+                  <th>拟制人</th>
+                  <th>拟制日期</th>
+                  <th>审核人</th>
+                  <th>审核日期</th>
+                  <th>批准人</th>
+                  <th>批准日期</th>
+                  <th>发放人</th>
+                  <th>已归档</th>
+                  <th>备注</th>
+                </tr>  
+              </thead>
+              <tbody class="configureTbody">
+                <tr>
+                  <td contenteditable=true></td>
+                  <td contenteditable=true></td>
+                  <td contenteditable=true></td>
+                  <td contenteditable=true></td>
+                  <td contenteditable=true></td>
+                  <td contenteditable=true></td>
+                  <td contenteditable=true></td>
+                  <td contenteditable=true></td>
+                  <td contenteditable=true></td>
+                  <td contenteditable=true></td>
+                  <td contenteditable=true></td>
+                  <td contenteditable=true></td>
+                  <td contenteditable=true></td>
+                  <td contenteditable=true></td>
+                  <td contenteditable=true></td>
+                  <td contenteditable=true></td>
+                  <td contenteditable=true></td>
+                  <td contenteditable=true></td>
+                </tr> 
+              </tbody>
+            </table> 
+          </div>
+        </div>
+        <span class="addConfigure">从配置库中添加配置项</span>
+        <div class="btngroup">
+          <button class="save">保存</button>
+        </div>
+      </div>
+    <style>
+      
+      /* 
+        全局的css样式 
+        包含：
+          全局字体、hover字体颜色
+          全局按钮、hover按钮颜色
+          全局输入框 、hover输入框颜色
+          全局hover列表颜色
+      */
+      * {
+        padding: 0;
+        margin: 0;
+        font-size: 14px;
+        color: #17325c;
+        font-family:  "Microsoft YaHei",arial, helvetica, sans-serif,"SimHei";
+      }
+      ul,li {
+        list-style: none;
+      }
+      i,em{
+        font-style: normal;
+      }
+      a {
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: none;
+      }
+
+      body{
+        /* background: #F3f6f9; */
+        padding: 10px;
+      }
+      .main h3{
+        text-align: center;
+      }
+      table{
+        width: 100%;
+        border-top: 1px solid #d8dee6;
+      }
+      thead th{
+        border-bottom: 1px solid #d8dee6;
+        border-right: 1px solid #d8dee6;
+      }
+      thead th:first-child{
+        border-left: 1px solid #d8dee6;
+      }
+      table td{
+        border-bottom: 1px solid #d8dee6;
+        border-right: 1px solid #d8dee6;
+        text-align: center;
+      }
+      table td:first-child{
+        border-left: 1px solid #d8dee6;
+      }
+      /* thead tr th:nth-child(2){
+        width: 15%;
+      }
+      thead tr th:nth-child(3){
+        width: 15%;
+      } */
+     
+      /* <td class="radiogroup"> */
+      .detailRadio{
+        /* float: left; */
+        display: inline-block;
+        margin: 0 5px;
+      }
+      .add{
+        color: #0060a5;
+        cursor:pointer;
+      }
+      .mask{
+        height: 100%;
+        width:100%;
+        position: fixed;
+        top:0;
+        background: rgba(255,255, 255,0.9 );
+        display: none;
+        z-index: 999;
+      }
+      .modalDetail{
+        height: 300px;
+        width: 800px;
+        margin: 150px auto;
+        position: absolute;
+        display: none;
+        z-index: 1000;
+        border: 1px solid #ccc;
+        padding: 20px;
+        left:50%;
+        top:25%;
+        transform: translate(-50%,-50%);
+        border-radius: 3px;
+      }
+      .modalDetail .close{
+        position: fixed;
+        top:-38%;
+        right: -38%;
+        height: 30px;
+        width: 30px;
+        border: 2px solid #d8dee6;
+        text-align: center;
+        line-height: 30px;
+        font-size: 20px;
+        font-weight: 900;
+      }
+      .modalDetail h3{
+        font-size: 14px;
+        font-weight: 700;
+        text-align: center;
+      }
+      .modalDetail .addConfigure{
+        color: #0060a5;
+        cursor:pointer;
+      }
+      .modalDetail .btngroup{
+        margin-top: 10px;
+      }
+      .modalDetail .btngroup button{
+        float: right;
+        margin-right: 20px;
+        height: 30px;
+        width: 80px;
+        text-align: center;
+        border-radius:5px; 
+        background: none;
+        border: 1px solid #d8dee6;
+
+      }
+    </style>
+   
+    
+  </body>
+</html>
+
+
+

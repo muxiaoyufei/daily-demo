@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery.min.js"></script>  
+</head>
+<body>
+    <form id="tf">
+        <input type="file" name="img"/>
+        <input type="text" name="username"/>
+        <input type="button" value="提" onclick="test();"/>
+</form>
+</body>
+
+<script type="text/jscript">
+
+    function test(){
+        var form = new FormData(document.getElementById("tf"));
+        console.log("form",form)
+        form.append("userId","00520170731C6E6wGDh8");
+        form.append("orgId","ccdev85orcl");
+        form.append("binding","ABE37688FBE9D29091017C0685266B21");
+        form.append("listFile",new FormData(document.getElementById("tf")));
+        $.ajax({
+            url:"http://117.122.226.252:9997/api/file/upload",
+            type:"post",
+            data:form,
+            context:document.body,
+            processData:false,
+            contentType:false,
+            dataType:"json",
+            success:function(data){
+                console.log("over..",data);
+            },
+            error:function(data){
+                console.log("data>>>>",data)
+            }
+        });        
+    }
+    </script>
+</html>

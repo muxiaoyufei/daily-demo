@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>新建报价单明细</title>
+  <script src="./jquery-3.2.1.min.js"></script>
+  <script src="./index.js"></script>
+  <!-- <link rel="stylesheet" href="./css/base.css"> -->
+  <link rel="stylesheet" href="./index.css">
+
+</head>
+<body>
+  <!-- 新建报价单  -->
+  <div class="newQuote QuoteDetail" style="display:block">
+    <!-- 顶部事件功能栏 --> 
+    <div class="newEventTop ">
+      <div class="weChatcancel">取消</div>
+      <div class="weChatTitle">新建报价单明细</div>
+      <div class="weChatSave">保存</div>
+    </div>
+    <!-- 新建报价单内容 -->
+    <div class="newEventCon">
+      <!-- 标题栏 -->
+      <div class="newEventConTitle">报价单信息</div>
+      <ul class="newEventConUl">
+        <li class="newEventConLi">
+          <label>报价名称</label>
+          <input type="text">
+        </li>
+        <li class="newEventConLi">
+          <label>报价单明细编号</label>
+          <input type="text">
+        </li>
+        <li class="newEventConLi">
+          <label>工地地址 (省)</label>
+          <!-- <input type="text">-->
+          <select name="" class="eventType"> 
+            <option value="">AAAA省</option>
+            <option value="">BBBB省</option>
+            <option value="">CCCC省</option>
+            <option value="">DDDD省</option>
+            <option value="">EEEE省</option>
+          </select>
+          <div class="SelectDateIcon"></div>
+        </li>
+        <li class="newEventConLi">
+          <label>工地地址 (市)</label>
+          <!-- <input type="text">-->
+          <select name=""  class="eventType">
+            <option value="">AAAA市</option>
+            <option value="">BBBB市</option>
+            <option value="">CCCC市</option>
+            <option value="">DDDD市</option>
+            <option value="">EEEE市</option>
+          </select>
+          <div class="SelectDateIcon"></div>
+        </li>
+        <li class="newEventConLi">
+          <label>工地地址 (区县)</label>
+          <!-- <input type="text">-->
+          <select name=""  class="eventType">
+            <option value="">AAAA县</option>
+            <option value="">BBBB县</option>
+            <option value="">CCCC县</option>
+            <option value="">DDDD县</option>
+            <option value="">EEEE县</option>
+          </select>
+          <div class="SelectDateIcon"></div>
+        </li>
+        
+        <li class="newEventConLi">
+          <label>类型</label>
+          <!-- <input type="text">-->
+          <select name="" id="eventType"  class="eventType">
+            <option value="">AAAA</option>
+            <option value="">BBBB</option>
+            <option value="">CCCC</option>
+            <option value="">DDDD</option>
+            <option value="">EEEE</option>
+          </select>
+          <div class="SelectDateIcon"></div>
+        </li>
+      </ul>
+      <!-- 设备信息 -->
+      <div class="newEventConTitle">设备信息</div>
+      <ul class="newEventConUl">
+        <li class="newEventConLi">
+          <label>机器类型</label>
+          <!-- <input type="text">-->
+          <select name=""  class="eventType">
+            <option value="">机器类型A</option>
+            <option value="">机器类型B</option>
+            <option value="">机器类型C</option>
+            <option value="">机器类型D</option>
+            <option value="">机器类型E</option>
+          </select>
+          <div class="SelectDateIcon"></div>
+        </li>
+        <li class="newEventConLi">
+          <label>品牌</label>
+          <!-- <input type="text">-->
+          <select name=""  class="eventType">
+            <option value="">品牌A</option>
+            <option value="">品牌B</option>
+            <option value="">品牌C</option>
+            <option value="">品牌D</option>
+            <option value="">品牌E</option>
+          </select>
+          <div class="SelectDateIcon"></div>
+        </li>
+        <li class="newEventConLi">
+          <label>机器型号</label>
+          <input type="text" value="机器123" readonly id="JumpOwer">
+          <div class="JumpNagnifier"></div>
+        </li>
+      </ul>
+      <!-- 费用信息 -->
+      <div class="newEventConTitle">费用信息</div>
+      <ul class="newEventConUl addCostItem">
+        <!-- 搜索框 -->
+        <li class="newEventConLi">
+          <label>查找</label>
+          <input type="text" value=" " readonly id="searchInput">
+          <div class="JumpNagnifier"></div>
+        </li>
+        <li class="newEventConLi">
+          <label>查找备注</label>
+          <input type="text" value=" ">
+        </li>
+        <li class="newEventConLi">
+          <label>下拉</label>
+          <!-- <input type="text">-->
+          <select name=""  class="eventType">
+            <option value="">下拉A</option>
+            <option value="">下拉B</option>
+            <option value="">下拉C</option>
+            <option value="">下拉D</option>
+            <option value="">下拉E</option>
+          </select>
+          <div class="SelectDateIcon"></div>
+        </li>
+        <li class="newEventConLi">
+          <label>下拉备注</label>
+          <input type="text" /> 
+        </li>
+        <li class="newEventConLi">
+          <label>数字</label>
+          <input type="text" oninput = "value=value.replace(/[^\d]/g,'')" /> 
+        </li>
+        <li class="newEventConLi">
+          <label>数字备注</label>
+          <input type="text" /> 
+        </li>
+      </ul>
+      <div class="newEventConUl newQuoteLabel">
+        <label>新增费用项</label>
+        <div class="addItem">
+          <div class="newEventConLi addNewItem">
+            <!-- <input type="text">-->
+            <select name=""  class="eventType addType">
+              <option value="search">查找</option>
+              <option value="select">下拉</option>
+              <option value="num">数字</option>
+            </select>
+            <div class="SelectDateIcon addNewIcon"></div>
+          </div>
+          <button class="addBtn addCost">新增</button>
+        </div>
+      </div>
+      <!-- 费用合计信息 -->
+      <div class="newEventConTitle">费用合计信息</div>
+      <ul class="newEventConUl">
+        <li class="newEventConLi">
+          <label>费用总金额</label>
+          <input type="text">
+        </li>
+        <li class="newEventConLi">
+          <label>静卖价</label>
+          <input type="text" />
+        </li>
+      </ul>
+      <!-- 系统信息 -->
+      <div class="newEventConTitle">系统信息</div>
+      <ul class="newEventConUl">
+        <li class="newEventConLi">
+          <label>创建人</label>
+          <input type="text">
+        </li>
+        <li class="newEventConLi">
+          <label>创建时间</label>
+          <input type="text" />
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- 机器型号 -->
+  <div id="owerEvent" class="QuoteDetail" style="display:none">
+    <!-- 机器型号 -->
+    <div class="EventAssignor">
+      <div class="newEventTop">
+        <div class="weChatcancel" id="eventCancel" style="position: absolute;">取消</div>
+        <div class="weChatTitle" style="width:100%;">机器型号</div>
+      </div>
+      <!-- 搜索型号 -->
+      <div class="EventSearchColleague">
+        <input type="text" class="EventSearchColleagueInp" placeholder="搜索机器型号">
+      </div>
+      <div class="EventColleagueDiv">
+        <span class="EventColleagueIcon"></span>
+        <span class="EventColleagueFont">型号</span>
+      </div>
+    </div>
+    <!-- 型号列表 -->
+    <div class="EventColleagueList">
+      <ul>
+        <li class="EventColleagueLi">机器型号123</li>
+        <li class="EventColleagueLi">机器型号222</li>
+        <li class="EventColleagueLi">机器型号111</li>
+        <li class="EventColleagueLi">机器型号333</li>
+        <li class="EventColleagueLi">机器型号444</li>
+        <li class="EventColleagueLi">机器型号666</li>
+        <li class="EventColleagueLi">机器型号777</li>
+        <li class="EventColleagueLi">机器型号888</li>
+        <li class="EventColleagueLi">机器型号5555</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
